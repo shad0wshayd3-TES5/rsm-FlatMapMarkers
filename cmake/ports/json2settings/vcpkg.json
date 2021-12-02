@@ -1,0 +1,17 @@
+{
+	"name": "json2settings",
+	"version-string": "2021-12-01",
+	"homepage": "https://github.com/Ryan-rsm-McKenzie/Json2Settings",
+	"license": "MIT",
+	"dependencies": [
+		"nlohmann-json",
+		{
+			"name": "vcpkg-cmake",
+			"host": true
+		},
+		{
+			"name": "vcpkg-cmake-config",
+			"host": true
+		}
+	]
+}
