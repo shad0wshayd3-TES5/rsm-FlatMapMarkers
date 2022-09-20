@@ -6,7 +6,8 @@ namespace Hooks
 {
 	void Hook_WorldPtToScreenPt3(RE::NiCamera* a_camera, RE::NiPoint3& a_in, float& a_xOut, float& a_yOut, float& a_zOut, float a_zeroTolerance)
 	{
-		if (Settings::enabled) {
+		if (Settings::enabled)
+		{
 			a_in.z = static_cast<float>(Settings::markerHeight);
 		}
 
@@ -15,7 +16,7 @@ namespace Hooks
 
 	void Install()
 	{
-		REL::Relocation<std::uintptr_t> offset{ REL::ID(53111), 0x21F };
+		REL::Relocation<std::uintptr_t> offset{ RELOCATION_ID(52224, 53111), OFFSET(0x22F, 0x21F) };
 		auto& trampoline = SKSE::GetTrampoline();
 		trampoline.write_call<5>(offset.address(), &Hook_WorldPtToScreenPt3);
 	}

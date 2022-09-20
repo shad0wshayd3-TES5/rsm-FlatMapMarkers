@@ -1,22 +1,28 @@
 #pragma once
 
+#define WIN32_LEAN_AND_MEAN
+#define NOMINMAX
+
 #include "RE/Skyrim.h"
 #include "SKSE/SKSE.h"
 
-#include <memory>
-#include <string>
-
-#ifdef NDEBUG
 #include <spdlog/sinks/basic_file_sink.h>
-#else
-#include <spdlog/sinks/msvc_sink.h>
-#endif
+
+#define DLLEXPORT __declspec(dllexport)
 
 using namespace std::literals;
 
 namespace logger = SKSE::log;
-namespace stl = SKSE::stl;
 
-#include "Plugin.h"
+namespace stl
+{
+	using namespace SKSE::stl;
+}
 
-#define DLLEXPORT __declspec(dllexport)
+#ifdef SKYRIM_AE
+# define OFFSET(se, ae) ae
+#else
+# define OFFSET(se, ae) se
+#endif
+
+#include "Version.h"

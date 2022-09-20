@@ -1,10 +1,11 @@
 {
   "name": "flatmapmarkerssse",
-  "version-string": "1",
+  "license": "MIT",
   "dependencies": [
     "boost-stl-interfaces",
     "json2settings",
     "rsm-binary-io",
-    "spdlog"
+    "spdlog",
+    "xbyak"
   ]
 }

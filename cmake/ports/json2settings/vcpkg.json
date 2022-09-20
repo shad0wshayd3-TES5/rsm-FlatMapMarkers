@@ -1,7 +1,7 @@
 {
 	"name": "json2settings",
-	"version-string": "2021-12-01",
-	"homepage": "https://github.com/Ryan-rsm-McKenzie/Json2Settings",
+	"version-string": "2022-08-30",
+	"homepage": "https://github.com/shad0wshayd3/Json2Settings",
 	"license": "MIT",
 	"dependencies": [
 		"nlohmann-json",
