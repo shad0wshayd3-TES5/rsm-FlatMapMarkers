@@ -92,13 +92,15 @@ extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Load(const SKSE::LoadInterface* a_s
 	SKSE::Init(a_skse);
 	SKSE::AllocTrampoline(1 << 4);
 
-	if (!Settings::LoadSettings()) {
+	if (!Settings::LoadSettings())
+	{
 		logger::error("Failed to load settings."sv);
 		return false;
 	}
 
 	const auto messaging = SKSE::GetMessagingInterface();
-	if (!messaging || !messaging->RegisterListener(MessageHandler)) {
+	if (!messaging || !messaging->RegisterListener(MessageHandler))
+	{
 		logger::error("Failed to register MessageHandler."sv);
 		return false;
 	}
